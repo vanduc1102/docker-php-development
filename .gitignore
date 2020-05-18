@@ -1,0 +1,4 @@
+# Ingore everything except the info page.
+
+www
+!www/index.php
