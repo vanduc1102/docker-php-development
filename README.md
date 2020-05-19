@@ -11,9 +11,9 @@ docker-compose up --build
 
 ````
 
-## Common endpoints
+## Common Endpoints
 
 Your local is ready at: http://localhost:7000/
 
-PHPMyAdmin: http://localhost:8000/
+PhpMyAdmin: http://localhost:8000/
 
