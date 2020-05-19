@@ -9,7 +9,7 @@ docker-compose down
 # Rebuild
 docker-compose up --build
 
-````
+```
 
 ## Common Endpoints
 
