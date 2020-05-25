@@ -1,9 +1,9 @@
-FROM php:7.2.6-apache
+FROM php:7.4.3-apache
 
 ENV PORT 7000
 
 RUN apt-get update \
-    && apt-get install -y mysql-client \
+    && apt-get install -y default-mysql-client \
     && docker-php-ext-install mysqli \
     && a2enmod rewrite \
     && rm -rf /var/lib/apt
