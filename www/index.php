@@ -16,7 +16,7 @@ $result = mysqli_query( $conn, $query );
 <body>
 	<center>
 	<p>
-	Connected to MySQL:
+	<b> Connected to MySQL: </b>
 	<?php
 	while ( $value = $result->fetch_array( MYSQLI_ASSOC ) ) {
 		foreach ( $value as $element ) {

@@ -1,8 +1,9 @@
-FROM php:7.4.3-apache
+FROM php:7.2-apache
 
 ENV PORT 7000
 
 RUN apt-get update \
+    && apt-get install git -y \
     && apt-get install -y default-mysql-client \
     && docker-php-ext-install mysqli \
     && a2enmod rewrite \
@@ -13,4 +14,7 @@ RUN chmod +x /usr/local/bin/wp
 
 ENTRYPOINT []
 
-CMD sed -i "s/80/$PORT/g" /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf && docker-php-entrypoint apache2-foreground
+CMD sed -i "s/80/$PORT/g" /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf \
+    && docker-php-entrypoint apache2-foreground
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+    && composer require mockery/mockery --no-scripts --no-suggest
