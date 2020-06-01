@@ -1,4 +1,5 @@
 # Ingore everything except the info page.
 
 www
+php/custom.conf
 !www/index.php
