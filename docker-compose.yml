@@ -3,11 +3,12 @@ services:
     www:
         build: ./php
         ports:
-            - 7000:7000
+            - "7000-7100:7000-7100"
         volumes:
             - ./www:/var/www/html/
-            - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
             - ./php/apache2.conf:/etc/apache2/apache2.conf
+            - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+            - ./php/custom.conf:/etc/apache2/conf-enabled/custom.conf
         links:
             - db
     db:
