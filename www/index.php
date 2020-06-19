@@ -18,15 +18,16 @@ $result = mysqli_query( $conn, $query );
 	<p>
 	<b> Connected to MySQL: </b>
 	<?php
+		$elements = array();
 	while ( $value = $result->fetch_array( MYSQLI_ASSOC ) ) {
 		foreach ( $value as $element ) {
-			echo ' - ' . $element;
+			$elements [] = $element;
 		}
 	}
-	$result->close();
-	mysqli_close( $conn );
+		$result->close();
+		mysqli_close( $conn );
+		echo join( '-', $elements );
 	?>
-	-
 	</p>
 	</center>
 	<?php
